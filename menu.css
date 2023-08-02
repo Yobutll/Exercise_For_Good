@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  
+.Top_bar {
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+
+#Topic{
+    padding-left: 40px;
+}
+
+#menu {
+    padding-left: 1150px;
+}
+
+#about {
+    padding-left: 40px;
+}
+
+#sup {
+    padding-left: 30px;
+}
+
+#log{
+    padding-left: 30px;
+}
+
+#Topic,#menu,#about,#sup,#log,#topic_1 {
+    color: white;
+}
+
+#Topic:active,#menu:active,#about:active,#sup:active,#log:active{
+    color: black;
+}
+
+.Body_1 {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 960px;
+}
+
+.Body_1 {
+    background-color:  rgb(157, 0, 0);
+}
+
+
+#topic_1 {
+    padding-left: 400px;
+}
+
+#Picbo1 {
+    position: absolute;  /* ทำให้รูปไม่เคลื่อน */
+    padding-left: 1100px;
+}
+
+.space{
+    height: 500px;
+    background-color: white;
+}
+.Body_2 {
+    background-color: yellow;
+    height: 960px;
+    text-align: center;
+}
+
+#topic_2 {
+    padding-top: 480px;
+}
+
+
+.Body_3 {
+    height: 960px;
+    background-color: white;
+}
+
+.Bottom_Bar {
+    height: 400px;
+    background-color: red;
+}
