@@ -9,50 +9,40 @@ body {
     background-color: red;
     color: white;
     display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
+
   }
 
-
+#logo {
+    margin-left: 10px;
+    background-color: black;
+    border: 2px solid;
+    padding: 2px 6px 2px 6px;
+    border-color: black;
+}
 #Topic{
-    padding-left: 40px;
-}
-
-#menu {
-    padding-left: 1150px;
-}
-
-#about {
-    padding-left: 40px;
-}
-
-#sup {
-    padding-left: 30px;
-}
-
-#log{
-    padding-left: 30px;
-}
-
-#Topic,#menu,#about,#sup,#log,#topic_1 {
+    margin: 20px;
+    padding-left: 0px;
+    padding-right: 1100px;
     color: white;
 }
 
-#Topic:active,#menu:active,#about:active,#sup:active,#log:active{
+#menu, #about, #sup, #log, #topic_1 {
+    padding-left: 30px;
+    padding-top: 5px;
+    color: white;
+    
+}
+
+#Topic:active,#about:active,#sup:active,#log:active{
     color: black;
 }
 
 .Body_1 {
     display: flex;
-    position: relative;
     align-items: center;
     height: 960px;
-}
-
-.Body_1 {
     background-color:  rgb(157, 0, 0);
 }
-
 
 #topic_1 {
     padding-left: 400px;
@@ -60,7 +50,8 @@ body {
 
 #Picbo1 {
     position: absolute;  /* ทำให้รูปไม่เคลื่อน */
-    padding-left: 1100px;
+    margin-left: 1100px;
+    margin-bottom: 80px;
 }
 
 .space{
