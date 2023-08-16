@@ -6,24 +6,11 @@ Tennis
 Fitness
 Football
 
-CSS
-img {
-    display: flex;
-    margin: 60px 0 0 1000px;
-    width: 666px;
-    height: 601px;
-    object-fit: cover;  /* ทำให้รูปไม่ยืด */
-}
+            <p>We are grateful for the trust you place in us to provide accurate and valuable information about exercise locations.</p>
+            Your engagement, feedback, and suggestions have been invaluable in shaping the evolution of our platform,
+            making it better with each passing day.
 
 
-
-
-                <select name="Menu" id="select-m">
-                    <option value=""></option>
-                    <option value="">Basketball</option>
-                    <option value="">Badminton</option>
-                    <option value="">Park</option>
-                    <option value="">Tennis</option>
-                    <option value="">Fitness</option>
-                    <option value="">Football</option>
-                </select>
+We are grateful for the trust you place in us to provide accurate and valuable information about exercise locations.
+ Your engagement, feedback, and suggestions have been invaluable in shaping the evolution of our platform,
+ making it better with each passing day.
