@@ -29,6 +29,7 @@ body {
 #menu, #about, #sup, #log, #topic_1, #reg{
   margin-left: 10px;
   padding-top: 20px;
+  text-align: right;
   color: white;
   
 }
@@ -60,12 +61,14 @@ body {
 }
 .Body_2 {
   background-color: yellow;
-  height: 960px;
+  
+  flex: 1 0 auto;
   text-align: center;
 }
 
 #topic_2 {
-  padding-top: 480px;
+  padding-top: 40px;
+  
 }
 
 
@@ -80,7 +83,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-.row{
+.rows{
   display: flex;
   flex-wrap: wrap;
 }
@@ -103,10 +106,10 @@ ul{
 .footer-col h4{
   font-size: 32px;
   color: white;
-  text-transform: capitalize;
   margin-bottom: 35px;
   font-weight: 500;
   position: relative;
+  display: inline-block;
 }
 .footer-col h4::before{
   content: '';
@@ -130,11 +133,14 @@ ul{
   color: white;
   display: block;
   transition: all 0.3s ease;
+  
 }
+
 .footer-col ul li a:hover{
   color: yellow;
   padding-left: 8px;
 }
+
 .footer-col .social-links a{
   display: inline-block;
   height: 40px;
@@ -146,13 +152,19 @@ ul{
   border-radius: 50%;
   color: white;
   transition: all 0.5s ease;
+  
 }
 .footer-col ul li{
   font-size: 20px;
   color: white;
 }
+
 .footer-col .social-links a:hover{
   color: yellow;
   transform: rotate(360deg);
   background-color: red;
+}
+
+.footer-col ul{
+  display: block;
 }
