@@ -5,7 +5,7 @@ import {
   faInstagram,
   faLine,
 } from '@fortawesome/free-brands-svg-icons';
-import './Footer.css';
+
 const Footer = () => {
   return (
     <footer className="footer">
