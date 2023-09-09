@@ -8,30 +8,45 @@ body {
 .Top_bar {
   background-color: red;
   color: white;
+ padding: 10px 10px 5px 10px;
+  
   display: flex;
+  flex-wrap: wrap;
 
 }
 
 #logo {
-  margin-left: 5px;
+  margin-left: 2px;
   background-color:black;
   border: 2px solid;
-  padding: 20px 10px 5px 10px;
+  padding: 10px 20px 10px 20px;
   border-color: black;
   
 }
 #Topic{
-  margin: 10px;
+  margin-right: 45% ;
   padding-left: 20px;
   color: white;
 }
 
-#menu, #about, #sup, #log, #topic_1, #reg{
+ #topic_1 {
   margin-left: 10px;
   padding-top: 20px;
   text-align: right;
   color: white;
   
+}
+#menu a, #about a, #sup a, #log a, #reg a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+  float: right; /* จัดวางลิงค์ไปด้านขวา */
+}
+
+/* ใช้ padding-right เพื่อให้ลิงค์ห่างจากขอบขวาของ Navbar */
+#menu a, #about a, #sup a, #log a, #reg a {
+  padding-right: 20px; /* ปรับขนาดของระยะห่างตามความต้องการ */
+
 }
 
 #Topic:active,#about:active,#sup:active,#log:active{
@@ -130,7 +145,6 @@ ul{
   color: white;
   text-decoration: none;
   font-weight: 300;
-  color: white;
   display: block;
   transition: all 0.3s ease;
   

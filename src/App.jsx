@@ -16,7 +16,7 @@ function App() {
         <h3 id="about"><a href="/about-us">About-us</a></h3>
         <h3 id="sup"><a href="/support">Support</a></h3>
         <h3 id="log"><a href="/login">Login</a></h3>
-        <h3 id="reg"><a href="/register">Register</a></h3>
+        <h3 id="reg"><a href="/register">Sign up</a></h3>
       </div>
 
       <div className="Body_1">
