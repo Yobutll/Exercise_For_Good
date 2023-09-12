@@ -1,0 +1,20 @@
+img {
+    height: 600px;
+    width: 650px;
+    object-fit: cover;
+}
+
+.Content {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    height: 860px;
+}
+
+h1, img {
+    color: white;
+    margin-top: 50px;
+}
