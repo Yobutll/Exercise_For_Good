@@ -1,0 +1,13 @@
+.benefit {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffcb74;
+    height: 100vh;
+}
+
+p {
+    margin: 2px 0;
+}

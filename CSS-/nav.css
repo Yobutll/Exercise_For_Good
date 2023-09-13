@@ -4,12 +4,16 @@ body {
     padding: 0;
 }
 
+.toPic {
+    pointer-events: none;
+}
+
 a.menu, .toPic {
     font-size: large;
 }
 
 .navbar {
-    background-color: red;
+    background-color: #111111;
     overflow: hidden;
 }
 
@@ -23,7 +27,7 @@ a.menu, .toPic {
 }
 
 .navbar a:hover, .dropdown-content a:hover {
-    background-color: #c92a2a;
+    background-color: #000000;
     color: rgb(255, 255, 255);
 }
 
@@ -50,7 +54,7 @@ a.menu, .toPic {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #c34b4b; 
+    background-color: #313131; 
     min-width: 160px;
     z-index: 1;
 }

@@ -1,11 +1,11 @@
-.columd {
+.Column {
     margin: 20px;
     padding: 20px;
     background-color: #f0f0f0;
 }
 
 
-.welcome {
+.Contact {
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -29,13 +29,29 @@
 }
 
 
-.target {
+.Tutorials {
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 20px; 
 }
+
+.Tutorials h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.Tutorials ul {
+    list-style: none;
+    padding: 0;
+}
+
+.Tutorials li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
 
 .Pleasure {
     padding: 20px;
@@ -45,6 +61,7 @@
     margin-bottom: 20px; 
 }
 
-.member {
-    margin-top: 200px;
+.Pleasure p {
+    margin-bottom: 10px;
+    color: #555;
 }

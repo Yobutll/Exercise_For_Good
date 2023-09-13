@@ -9,7 +9,7 @@
 }
 
 .footer{
-    background-color: red;
+    background-color: #ffcb74;
     width: 100%;
     padding: 70px 0;
 }
@@ -72,4 +72,9 @@
     color: yellow;
     transform: rotate(360deg);
     background-color: red;
+}
+
+.ig-logo, .fb-logo, .line-logo {
+    width: 100%;
+    height: 100%;
 }
