@@ -9,13 +9,13 @@
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
+        <h1>Sign up</h1>
         <form id="login-form">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" autocomplete="email">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
+            <input type="submit" id="signUp" name="signup_submit">Login</input>
         </form>
     </div>
 </body>
@@ -24,6 +24,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
     import { getDatabase } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -43,5 +44,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
+
+    const auth = getAuth();
   </script>
 </html>

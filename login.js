@@ -1,6 +1,7 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// Import other Firebase modules as needed
+import { initializeApp } from "../firebase/app";
+import { getAnalytics } from "../firebase/analytics";
+import firebase from '/firebase/app';
+import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
 
 const loginForm = document.getElementById('login-form');
