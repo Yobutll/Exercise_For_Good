@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var aboutLink = document.getElementById("about-link");
-    var supportLink = document.getElementById("support-link");
-    var ExLink = document.getElementById("Ex")
+    let aboutLink = document.getElementById("about-link");
+    let supportLink = document.getElementById("support-link");
+    let ExLink = document.getElementById("Ex")
+    let HomeLink = document.getElementById("Home")
 
     aboutLink.addEventListener("click", function(event) {
         event.preventDefault();
-        // Navigate to the "about_us.html" page
-        window.location.href = "about_us.html"; // Replace with your actual page URL
+        window.location.href = "about_us.html"; 
     });
 
     supportLink.addEventListener("click", function(event) {
@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     ExLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "main.html";
+    });
+
+    HomeLink.addEventListener("click", function(event) {
         event.preventDefault();
         window.location.href = "main.html";
     });

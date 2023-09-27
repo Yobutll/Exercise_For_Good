@@ -4,83 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise For Good Health</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(Picture/Pic_body1.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            }
+
+            body::before {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1050px;
+            z-index: -1; 
+            }        
+    </style>
+
     <link rel="stylesheet" href="CSS-/nav.css">
-    <link rel="stylesheet" href="CSS-/main_Page/content.css">
-    <link rel="stylesheet" href="CSS-/main_Page/information.css">
-    <link rel="stylesheet" href="CSS-/main_Page/benefit.css">
+    <link rel="stylesheet" href="CSS-/content.css">
     <link rel="stylesheet" href="CSS-/footer.css">
     <script src="script.js"></script>
 </head>
-<body>
-    <div class="navbar">
-        <a href="#" class="toPic" id="Ex">Exercise For Good Health</a>
-        <a href="#" class="menu">Log in</a>
-        <a href="#" class="menu" id="about-link">ABOUT US</a>
-        <a href="#" class="menu" id="support-link">SUPPORT</a>
-        <div class="dropdown right">
-            <button class="dropbtn">MENU</button>
-            <div class="dropdown-content">
-                <a href="#">Football</a>
-                <a href="#">Basketball</a>
-                <a href="#">Tennis</a>
+    <body>
+        <div class="navbar">
+            <a href="#" class="toPic" id="Ex">Exercise For Good Health</a>
+            <a href="#" class="menu" id="css-log">Login</a>
+            <a href="#" class="menu" id="about-link">ABOUT US</a>
+            <a href="#" class="menu" id="support-link">SUPPORT</a>
+            <div class="dropdown right">
+                <button class="dropbtn">MENU</button>
+                <div class="dropdown-content">
+                    <a href="#">Basketball</a>            
+                    <a href="#">Badminton</a>            
+                    <a href="#">Park</a>
+                    <a href="#">Tennis</a>
+                    <a href="#">Fitness</a>
+                    <a href="#">Football</a>
+                </div>
+            </div>
+            <a href="#" class="menu" id="Home">HOME</a>
+        </div>
+
+        <div class="Content">
+            <div class="po-con">
+                <h1>Exercise for Good Health</h1>
+                <p>(Recommending exercise places and price rates around Khon Kaen University)</p>
             </div>
         </div>
-    </div>
 
-    <div class="Content">
-        <h1> Exercise for Good Health</h1>
-        <img src="Picture/Pic_body1.webp">
-    </div>
-
-    <div class="benefit">
-        <h2>Exercise</h2>
-        <p>Exercise is physical activity that boosts health, fitness, and well-being.</p>
-        <p>It includes planned, structured movements to improve aspects like endurance, strength, flexibility, and body composition.</p>
-    </div>
-
-    <div class="InforMation">
-        <h2>Exercise locations around kku</h2>
-    </div>
-
-    <footer class="footer"> 
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>Tel. phone: 099-17xx-xxx</li>
-                        <li>E-mail :mahateo@kkumail.com</li>
-                        <li>Line ID: tor2314</li>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"><img class="fb-logo" src="Picture/Facebook_Logo_.png" alt=""></i></a>
-                            <a href="https://www.instagram.com/"><i class="fab fa-instagram"><img class="ig-logo" src="Picture/ig-logo.png" alt=""></i></a>
-                            <a href="#"><i class="fab fa-line"><img class="line-logo" src="Picture/Line-Logo.png" alt=""></i></a>
-                        </div>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="#">Home Page</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Term & policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Premium</h4>
-                    <ul>
-                        <li><a href="#">Monthly</a></li>
-                        <li><a href="#">Yearly</a></li>
-                        <li><a href="#">Permanent</a></li>
-                    </ul>
-                </div>
-                
+        <div class="benefit">
+            <h2>Exercise</h2>
+            <div class="be-text">
+                <p>Exercise is physical activity that boosts health, fitness, and well-being.</p>
+                <p>It includes planned, structured movements to improve aspects like endurance, strength, flexibility, and body composition.</p>
             </div>
         </div>
-       
-    </footer>
-</body>
+
+        <div class="InforMation">
+            <h2>recommend</h2>
+        </div>
+
+        <footer class="footer"> 
+            <div class="foot-contenier">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li>Tel. phone: 099-17xx-xxx</li>
+                            <li>E-mail :mahateo@kkumail.com</li>
+                            <li>Line ID: tor2314</li>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"><img class="fb-logo" src="Picture/Facebook_Logo_.png" alt=""></i></a>
+                                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"><img class="ig-logo" src="Picture/ig-logo.png" alt=""></i></a>
+                                <a href="#"><i class="fab fa-line"><img class="line-logo" src="Picture/Line-Logo.png" alt=""></i></a>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Home Page</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Sign up</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Term & policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Premium</h4>
+                        <ul>
+                            <li><a href="#">Monthly</a></li>
+                            <li><a href="#">Yearly</a></li>
+                            <li><a href="#">Permanent</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        
+        </footer>
+    </body>
 </html>
