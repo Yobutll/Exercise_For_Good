@@ -3,88 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football</title>
-    <link rel="stylesheet" href="CSS-/sup.css">
-    <link rel="stylesheet" href="CSS-/nav.css">
-    <link rel="stylesheet" href="CSS-/footer.css">
+    <title>About Us</title>
+    <style>
+        body {
+            background-image: url("Picture/bg-football.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <link rel="stylesheet" href="CSS-/sport-css/football.css">
+    <link rel="stylesheet" href="CSS-/sport-css/sp-nav.css">
+    <script src="script.js"></script>
+    <script src="slide.js"></script>
 </head>
-<body>
-    <div class="navbar">
-        <a href="#" class="toPic">Exercise For Good Health</a>
-        <a href="support_page.html" class="menu">Log in</a>
-        <a href="#" class="menu">About Us</a>
-        <a href="#" class="menu">Support</a>
-        <div class="dropdown right">
-            <button class="dropbtn">Menu</button>
-            <div class="dropdown-content">
-                <a href="#">Football</a>
-                <a href="#">Basketball</a>
-                <a href="#">Tennis</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="Page">
-        <div class="head">
-            <h1><h2>Football</h2></h1>
-        </div>
-        <div>
-            <a href=""><img src="Picture/soocerCamp.PNG" alt=""></a>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-line"></i></a>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-    <footer class="footer"> 
+    <body>
         <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>Tel. phone: 099-17xx-xxx</li>
-                        <li>E-mail :mahateo@kkumail.com</li>
-                        <li>Line ID: tor2314</li>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"><img class="fb-logo" src="Picture/Facebook_Logo_.png" alt=""></i></a>
-                            <a href="https://www.instagram.com/"><i class="fab fa-instagram"><img class="ig-logo" src="Picture/ig-logo.png" alt=""></i></a>
-                            <a href="#"><i class="fab fa-line"><img class="line-logo" src="Picture/Line-Logo.png" alt=""></i></a>
-                        </div>
-                    </ul>
+            <div class="navbar">
+                <a href="#" class="toPic" id="Ex">Exercise For Good Health</a>
+                <a href="#" class="menu" id="css-log">Login</a>
+                <a href="#" class="menu" id="about-link">ABOUT US</a>
+                <a href="#" class="menu" id="support-link">SUPPORT</a>
+                <div class="dropdown right">
+                    <button class="dropbtn">MENU</button>
+                    <div class="dropdown-content">
+                        <a href="#">Basketball</a>            
+                        <a href="#">Badminton</a>            
+                        <a href="#">Park</a>
+                        <a href="#">Tennis</a>
+                        <a href="#">Fitness</a>
+                        <a href="#" id="football">Football</a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="#">Home Page</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Term & policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Premium</h4>
-                    <ul>
-                        <li><a href="#">Monthly</a></li>
-                        <li><a href="#">Yearly</a></li>
-                        <li><a href="#">Permanent</a></li>
-                    </ul>
-                </div>
-                
+                <a href="#" class="menu" id="Home">HOME</a>
             </div>
+            <header>
+                <h1>Football</h1>
+            </header>
+            <div class="content">
+                <div class="slider-container">
+                    <div class="slider">
+                        <img src="Picture/football/camp1.PNG" alt="Image 1">
+                        <img src="Picture/football/camp2.PNG" alt="Image 2">
+                        <img src="Picture/football/camp3.PNG" alt="Image 3">
+                        <img src="Picture/football/camp4.PNG" alt="Image 3">
+                    </div>
+                    <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
+                    <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+                </div>
+                <div class="text">
+                    <p><h2>Soccer Camp</h2>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,
+                         sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15303.036096077298!2d102.8240331!3d16.4877352!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228b68f65f10f7%3A0x253d27b620f99379!2zU29jY2VyIGNhbXAga2hvbmthZW4g4Liq4LiZ4Liy4Lih4Lif4Li44LiV4Lia4Lit4Lil4Lir4LiN4LmJ4Liy4LmA4LiX4Li14Lii4Lih!5e0!3m2!1sth!2sth!4v1696125166967!5m2!1sth!2sth" width="620" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div> 
+            </div>
+
+            <div class="content">
+                <div class="slider-container">
+                    <div class="slider2">
+                        <img src="Picture/football/freeman1.PNG" alt="Image 1">
+                        <img src="Picture/football/freeman2.PNG" alt="Image 2">
+                        <img src="Picture/football/freeman3.PNG" alt="Image 3">
+                    </div>
+                    <button class="prev-btn" onclick="prevSlide2()">&#10094;</button>
+                    <button class="next-btn" onclick="nextSlide2()">&#10095;</button>
+                </div>
+                <div class="text">
+                    <p><h2>Free man</h2>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,
+                         sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15303.564350538516!2d102.8132753!3d16.4810516!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a9b3d1b1317%3A0x623af42cff8eee9f!2sSTRONG%20GYM%20%26%20FREEMAN%20CLUB!5e0!3m2!1sth!2sth!4v1696127028253!5m2!1sth!2sth" width="620" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <script></script> 
+            </div>
+
         </div>
-       
-    </footer>
-</body>
+    </body>
 </html>

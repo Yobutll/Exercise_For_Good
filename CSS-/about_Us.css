@@ -16,7 +16,7 @@
 
 .Contact h1 {
     font-size: 24px;
-    color: #333;
+    color: #000000;
 }
 
 .Contact ul {
@@ -26,7 +26,7 @@
 
 .Contact li {
     margin-bottom: 10px;
-    color: #555;
+    color: #000000;
 }
 
 
@@ -40,7 +40,7 @@
 
 .Tutorials h1 {
     font-size: 24px;
-    color: #333;
+    color: #000000;
 }
 
 .Tutorials ul {
@@ -50,7 +50,7 @@
 
 .Tutorials li {
     margin-bottom: 10px;
-    color: #555;
+    color: #000000;
 }
 
 
@@ -62,7 +62,8 @@
     margin-bottom: 20px; 
 }
 
-.Pleasure p {
+.Pleasure, b {
+    font-size: larger;
     margin-bottom: 10px;
-    color: #555;
+    color: #000000;
 }

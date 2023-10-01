@@ -11,11 +11,10 @@ body {
 
 a.menu{
     margin-top: 5px;
-    font-size: 15px;
+    font-size: larger;
 }
 
 .navbar {
-
     overflow: hidden;
     opacity: 80%;
 }
@@ -23,41 +22,18 @@ a.menu{
 .navbar a, .dropdown-content a {
     float: left;
     display: block;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-.dropdown-content a:hover {
-    background-color: #545050;
-    color: rgb(255, 255, 255);
+.navbar a:hover, .dropdown-content {
+    color: rgb(234, 0, 0);
 }
 
-.menu {
-    position: relative;
-    text-decoration: none; /* Remove default underline */
-}
-
-.menu::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: yellow;
-    transition: width 0.3s ease;
-}
-
-.menu:hover::before {
-    width: 60%;
-    right: 0;
-}
-
-
-a.toPic:hover {
-    background-color: #ffffff00;
+.dropdown-content {
+    background-color: rgb(205, 208, 205);
 }
 
 .dropdown {
@@ -71,10 +47,10 @@ a.toPic:hover {
 }
 
 .dropdown .dropbtn {
-    font-size: 15px;
+    font-size: larger;
     border: none;
     outline: none;
-    color: white;
+    color: rgb(0, 0, 0);
     background-color: inherit;
     margin: 0;
     padding: 14px 16px;
@@ -84,7 +60,6 @@ a.toPic:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #313131; 
     min-width: 160px;
     z-index: 1;
 }
@@ -108,19 +83,11 @@ a.toPic:hover {
 }
 
 #css-log {
-    font-size: 18px;
-    margin-top: 10px;
-    padding: 8px 8px 8px 8px;
-    border-width: 0px;
-    border-radius: 10% ;
-    background-color: rgb(6, 59, 106);
+    margin: 5px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
 }
 
-#css-log.menu:before{
-    width: 0%;
-    right: 0;
-}
-
-#css-log.menu:hover {
-    background-color: rgb(6, 82, 148);
+#css-log:hover {
+    background-color: rgb(126, 109, 237);
 }
