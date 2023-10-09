@@ -32,6 +32,10 @@ a.menu{
     color: rgb(234, 0, 0);
 }
 
+.navbar .toPic:hover {
+    color: rgb(0, 0, 0);
+}
+
 .dropdown-content {
     background-color: rgb(205, 208, 205);
 }
