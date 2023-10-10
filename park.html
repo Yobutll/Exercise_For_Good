@@ -3,26 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="JS/change_Page.js"></script>
+    <title>Park</title>
+    <style>
+        body {
+            background-image: url("Picture/bg-park.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="CSS-/sport-css/BoxSp.css">
     <link rel="stylesheet" href="CSS-/sport-css/sp-nav.css">
+    <link rel="stylesheet" href="contact.css">
+    <script src="JS/change_Page.js"></script>
+    <script src="JS/sl-park.js"></script>
 </head>
-<body>
-    <div class="navbar">
-        <a href="#" class="toPic" id="Ex">Exercise For Good Health</a>
-        <a href="#" class="menu" id="css-log">Login</a>
-        <a href="#" class="menu" id="about-link">ABOUT US</a>
-        <a href="#" class="menu" id="support-link">SUPPORT</a>
-        <div class="dropdown right">
-            <button class="dropbtn">MENU</button>
-            <div class="dropdown-content">
-                <a href="#" id="bas">Basketball</a>                   
-                <a href="#" id="park">Park</a>
-                <a href="#" id="fitness">Fitness</a>
-                <a href="#" id="football">Football</a>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="toPic" id="Ex">Exercise For Good Health</a>
+                <a href="#" class="menu" id="css-log">Login</a>
+                <a href="#" class="menu" id="about-link">ABOUT US</a>
+                <a href="#" class="menu" id="support-link">SUPPORT</a>
+                <div class="dropdown right">
+                    <button class="dropbtn">MENU</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="bas">Basketball</a>                   
+                        <a href="#" id="park">Park</a>
+                        <a href="#" id="fitness">Fitness</a>
+                        <a href="#" id="football">Football</a>
+                    </div>
+                </div>
+                <a href="#" class="menu" id="Home">HOME</a>
             </div>
+            <header>
+                <h1>Park</h1>
+            </header>
+            <div class="content">
+                <div class="slider-container">
+                    <div class="slider">
+                        <img src="Picture/park/st-3.jpg" alt="Image 1">
+                        <img src="Picture/park/st-2.jpeg" alt="Image 2">
+                        <img src="Picture/park/st-1.jpg" alt="Image 3">
+                    </div>
+                    <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
+                    <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+                </div>
+                <div class="text">
+                    <p><h2>บึงสีฐาน</h2></p>
+                    <p>บึงสีฐาน เป็นบึงน้ำจืดขนาดเล็ก ที่มีความยาวรอบบึงประมาณ 3 กิโลเมตร เป็นบึงที่อยู่ภายในมหาวิทยาลัยขอนแก่น ฝั่งประตูสีฐานติดกับถนนมะลิวัลย์  และอยู่ติดกับศูนย์ประชุมเอนกประสงค์กาญจนาภิเษก </p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15306.461911557599!2d102.8152165!3d16.444344!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228b009df9aa0f%3A0xe64c8fbc56a06f90!2z4Lil4Liy4LiZ4LiB4Li04LiI4LiB4Lij4Lij4LihIOC4o-C4tOC4oeC4muC4tuC4h-C4quC4teC4kOC4suC4mQ!5e0!3m2!1sth!2sth!4v1696946737759!5m2!1sth!2sth" width="620" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div> 
+            </div>
+
+            <div class="content">
+                <div class="slider-container">
+                    <div class="slider2">
+                        <img src="Picture/park/pl-1.jpg" alt="Image 1">
+                        <img src="Picture/park/pl-2.jpg" alt="Image 2">
+                        <img src="Picture/park/pl-3.jpg" alt="Image 3">
+                    </div>
+                    <button class="prev-btn" onclick="prevSlide2()">&#10094;</button>
+                    <button class="next-btn" onclick="nextSlide2()">&#10095;</button>
+                </div>
+                <div class="text">
+                    <p><h2>สระพลาสติก</h2></p>
+                    <p>สระพลาสติก ม.ขอนแก่น
+                        ความเป็นมา
+                        สร้างขึ้นในปี พ.ศ. 2530 เป็นส่วนหนึ่งของสวนร่มเกล้ากัลปพฤกษ์ เพื่อเป็นแหล่งกักเก็บน้ำของมหาวิทยาลัย ด้านล่างเป็นดินปนทรายจึงนำพลาสติกขนาดใหญ่มาปูเพื่อกันไม่ให้น้ำรั่วซึมลงไปด้านล่าง จึงถูกเรียกว่าสระพลาสติก</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15304.192387321782!2d102.819319!3d16.4731021!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a88e91a9fcd%3A0x14a4643ac7223c60!2z4Liq4Lij4Liw4Lie4Lil4Liy4Liq4LiV4Li04LiBIOC4oeC4gi4!5e0!3m2!1sth!2sth!4v1696946766179!5m2!1sth!2sth" width="620" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="slider-container">
+                    <div class="slider3">
+                        <img src="Picture/park/nw-1.jpg" alt="Image 1">
+                        <img src="Picture/park/nw-2.jpg" alt="Image 2">
+                        <img src="Picture/park/nw-3.jpg" alt="Image 3">
+                    </div>
+                    <button class="prev-btn" onclick="prevSlide3()">&#10094;</button>
+                    <button class="next-btn" onclick="nextSlide3()">&#10095;</button>
+                </div>
+                <div class="text">
+                    <p><h2>บึงหนอเเวง</h2></p>
+                    <p>บึงหนองแวงมีพื้นที่ที่หลากหลายในด้านที่อยู่อาศัยและธรรมชาติ และเป็นที่รู้จักในการเป็นแหล่งท่องเที่ยวสำหรับกิจกรรมนั่งเรือพายที่บึงหนองแวง รวมถึงสวนสาธารณะและสถานที่ท่องเที่ยวต่าง ๆ ในพื้นที่ นอกจากนี้ ยังมีวัดสำคัญอย่างวัดพระมงคลาราม (วัดหนองแวง) ที่มีพระพุทธรูปใหญ่เป็นเอกลักษณ์อยู่ในบริเวณนี้ด้วย.</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30608.771980076996!2d102.8017412847656!3d16.470650783026386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1696946708256!5m2!1sth!2sth" width="620" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+
         </div>
-        <a href="#" class="menu" id="Home">HOME</a>
-    </div>
-</body>
+    </body>
 </html>
