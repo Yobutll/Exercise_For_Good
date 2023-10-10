@@ -7,6 +7,106 @@
 </head>
 <body>
     <h1>This is our Admin page</h1>
+    <ul id="info-list"></ul>
+    <input type="text" id="head-input" placeholder="Head">
+    <input type="text" id="detail-input" placeholder="Detail">
+    <button id="add-button">Add Info</button>
     
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js";
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCvEX2dnyLlPz--Z4-_C3xQXjQZFjszhM8",
+        authDomain: "exercise-for-goodhealth.firebaseapp.com",
+        databaseURL: "https://exercise-for-goodhealth-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "exercise-for-goodhealth",
+        storageBucket: "exercise-for-goodhealth.appspot.com",
+        messagingSenderId: "174422127893",
+        appId: "1:174422127893:web:c638bee568ea369f86651c",
+        measurementId: "G-R392B0FLF4"
+    };
+       // Initialize Firebase
+       // Initialize Firebase
+        const firebaseApp = initializeApp(firebaseConfig);
+        const db = getFirestore(firebaseApp);
+        const infoList = document.querySelector('#info-list');
+        const headInput = document.querySelector('#head-input');
+        const detailInput = document.querySelector('#detail-input');
+        const addButton = document.querySelector('#add-button');
+        
+        addButton.addEventListener('click', () => {
+    const headValue = headInput.value;
+    const detailValue = detailInput.value;
+
+    // Check if both head and detail are provided
+    if (headValue && detailValue) {
+        // Add the new info to Firestore
+        addDoc(collection(db, 'information'), {
+            Head: headValue,
+            detail: detailValue
+        }).then(() => {
+            console.log('Info added successfully');
+            // Clear the input fields after adding the info
+            headInput.value = '';
+            detailInput.value = '';
+        }).catch((error) => {
+            console.error('Error adding info: ', error);
+        });
+    } else {
+        alert('Please provide both head and detail.');
+    }
+});
+
+        function addDeleteButton(li, docu) {
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.addEventListener('click', () => {
+                const docId = docu.id;
+                // Delete the document from Firestore
+                deleteDoc(doc(db, 'information', docId)).then(() => {
+                    console.log('Info deleted successfully');
+                }).catch((error) => {
+                    console.error('Error deleting info: ', error);
+                });
+            });
+            li.appendChild(deleteButton);
+        }
+
+        function renderInfo(doc) {
+            const li = document.createElement('li');
+            const head = document.createElement('h3');
+            const detail = document.createElement('p');
+
+            li.setAttribute('data-id', doc.id);
+            head.textContent = doc.data().Head; 
+            detail.textContent = doc.data().detail;
+
+            li.appendChild(head);
+            li.appendChild(detail);
+
+            addDeleteButton(li, doc);
+            infoList.appendChild(li);
+        }
+
+        // Retrieve and display existing data from Firestore
+        const infoCollection = collection(db, 'information');
+        getDocs(infoCollection).then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                renderInfo(doc);
+            });
+        });
+        
+        // Add a new info to Firestore when the "Add Info" button is clicked
+        addButton.addEventListener('click', () => {
+            const headValue = headInput.value;
+            const detailValue = detailInput.value;
+
+            // Check if both head and detail are provided
+        });
+</script>
 </body>
 </html>
