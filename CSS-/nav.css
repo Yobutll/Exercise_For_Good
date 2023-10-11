@@ -15,9 +15,8 @@ a.menu{
 }
 
 .navbar {
-
     overflow: hidden;
-    opacity: 80%;
+
 }
 
 .navbar a, .dropdown-content a {

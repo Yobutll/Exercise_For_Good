@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let fitnessLink = document.getElementById("fitness");
     let parkLink = document.getElementById("park");
     let basLink = document.getElementById("bas");
+    let supportLinkFooter = document.getElementById("support-link-footer");
 
     aboutLink.addEventListener("click", function(event) {
         event.preventDefault();
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         window.location.href = "support_page.html";
     });
+
 
     ExLink.addEventListener("click", function(event) {
         event.preventDefault();
@@ -46,6 +48,11 @@ document.addEventListener("DOMContentLoaded", function() {
     basLink.addEventListener("click", function(event) {
         event.preventDefault();
         window.location.href = "basketball.html";
+    });
+
+    supportLinkFooter.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "support_page.html";
     });
 
 });

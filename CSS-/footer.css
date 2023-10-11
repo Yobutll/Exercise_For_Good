@@ -70,7 +70,7 @@
 }
 .footer-col .social-links a:hover{
     color: yellow;
-    transform: rotate(360deg);
+    transform: matrix(1.1,0,0,1.1,0,0);
     background-color: red;
 }
 
