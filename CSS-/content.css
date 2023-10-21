@@ -9,8 +9,21 @@
     font-size: x-large;
     display: flex;
     flex-direction: column;
-    position: absolute; left: 80px; top: 500px;
+    position: absolute;
+    left: 80px;
+    top: 500px;
 }
+
+/* Add a media query to adjust styles for smaller screens */
+@media (max-width: 1080px) {
+    .po-con {
+        left: 20px; /* Adjust the left position for smaller screens */
+        font-size: large; /* Adjust the font size for smaller screens */
+    }
+}
+
+
+
 
 h1 {
     margin-bottom: 2px;
@@ -41,13 +54,4 @@ h1 {
 
 p {
     margin: 0;
-}
-
-.InforMation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f6f6f6;
-    height: 680px;
 }

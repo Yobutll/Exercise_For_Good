@@ -16,7 +16,20 @@ a.menu{
 
 .navbar {
     overflow: hidden;
+    padding-right: 30px;
 
+}
+
+@media (max-width: 1200px) {
+    .navbar {
+        padding-right: 10px;
+    }
+    .navbar a.menu {
+        float: none;
+    }
+    .dropdown.right {
+        float: none;
+    }
 }
 
 .navbar a, .dropdown-content a {
