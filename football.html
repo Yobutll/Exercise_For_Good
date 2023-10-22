@@ -192,18 +192,18 @@
                 const db = getFirestore(firebaseApp);
             // Function to render data from Firestore
 
-            function updateHeadDetailAndPrice(doc, idcollect) {
+            function updateHeadDetailAndPrice(doc, idcollect, docId) {
                 const h2 = document.createElement('h2');
                 const p = document.createElement('p');
                 const table = document.createElement('table');
                 table.classList.add('larger-table');
                 const tbody = document.createElement('tbody');
                 document.getElementById(idcollect).innerHTML = "";
-                
+                console.log(doc.data().Head);
                 
                 h2.textContent = doc.data().Head;
                 p.textContent = doc.data().detail;
-
+                
                 const tableData = [
                     ['ก่อน 18:00', '18:00-20:00', 'หลัง 22:00'],
                     [doc.data().price[0], doc.data().price[1], doc.data().price[2]],
@@ -234,19 +234,17 @@
                 document.getElementById(idcollect).appendChild(p);
                 document.getElementById(idcollect).appendChild(table);
                 document.getElementById(tableId).appendChild(tbody);
-            
         }
         
         // Retrieve and display data from Firestore
         const infoCollection = collection(db, 'football');
-        getDocs(infoCollection).then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                updateHeadDetailAndPrice(doc, "text-name1");
-                updateHeadDetailAndPrice(doc, "text-name2");
-                updateHeadDetailAndPrice(doc, "text-name3");
-                console.log(`${doc.id} => ${doc.data()}`);
+        for (let i = 1; i <= 3 ; i++) {
+            const sectionId = `text-name${i}`;
+            getDocs(infoCollection).then((querySnapshot) => {
+                const doc = querySnapshot.docs[i - 1]; // Get the Firestore document based on section number
+                updateHeadDetailAndPrice(doc, sectionId, doc.id);
             });
-        });
+        }
         </script>
     </body>
 </html>
