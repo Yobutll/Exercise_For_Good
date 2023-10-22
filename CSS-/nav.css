@@ -16,12 +16,7 @@ a.menu{
 
 .navbar {
     overflow: hidden;
-<<<<<<< Updated upstream
     padding-right: 30px;
-
-=======
-    font-size: 15px;
->>>>>>> Stashed changes
 }
 
 @media (max-width: 1200px) {
