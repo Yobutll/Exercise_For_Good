@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     ExLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "main.html";
+        window.location.href = "index.html";
     });
 
     HomeLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "main.html";
+        window.location.href = "index.html";
     });
 
     footballLink.addEventListener("click", function(event) {

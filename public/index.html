@@ -1,89 +1,191 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise For Good Health</title>
+    <base href="/">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(public/Picture/Pic_body1.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            }
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.5.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.5.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.5.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.5.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.5.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.5.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.5.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.5.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.5.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.5.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
+            body::before {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+            }        
     </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Lol</h2>
-      <h1>Hi</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <link rel="stylesheet" href="public/CSS-/blog_Artic.css" >
+    <link rel="stylesheet" href="public/CSS-/nav.css">
+    <link rel="stylesheet" href="public/CSS-/content.css">
+    <link rel="stylesheet" href="public/CSS-/footer.css">
+    <script src="public/JS/change_Page.js"></script>
+</head>
+    <body>
+        <div class="navbar">
+            <a href="#" class="toPic" id="Ex">Exercise For Good Health</a>
+            <a href="login.html" class="menu" id="css-log">Login</a>
+            <a href="#" class="menu" id="about-link">ABOUT US</a>
+            <a href="#" class="menu" id="support-link">SUPPORT</a>
+            <div class="dropdown right">
+                <button class="dropbtn">MENU</button>
+                <div class="dropdown-content">
+                    <a href="#" id="bas">Basketball</a>                   
+                    <a href="#" id="park">Park</a>
+                    <a href="#" id="fitness">Fitness</a>
+                    <a href="#" id="football">Football</a>
+                </div>
+            </div>
+            <a href="#" class="menu" id="Home">HOME</a>
+        </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        <div class="Content">
+            <div class="po-con">
+                <h1>Exercise for Good Health</h1>
+                <p>(Recommending exercise places and price rates around Khon Kaen University)</p>
+            </div>
+        </div>
+        <div class="space">
+            
+        </div>
+        <div class="benefit">
+            <h2>Exercise</h2>
+            <div class="be-text">
+                <p>Exercise is physical activity that boosts health, fitness, and well-being.</p>
+                <p>It includes planned, structured movements to improve aspects like endurance, strength, flexibility, and body composition.</p>
+            </div>
+        </div>
+        
+        <div class="InforMation">
+            <h2>BLOG ARTICLES</h2>
+            <p>Always equip yourself with knowledge that keep your fitness at top-notch level.</p>
+            <div class="blog-enhancement__item">
+                <div class="blog-enhancement__img">
+                    <a href='https://www.fitnessfirst.co.th/blog/how-breathing-affects-your-workout-results' target="_blank">
+        
+                        <img src="public/Picture/breating.PNG" alt="feature" class="lazyload" />
+                        <div class="blog-enhancement-desc">
+                            <div class="blog-enhancement__title">
+                                THRIVING WELL
+                            </div>
+                            <div class="blog-enhancement__date">13 January 2023</div>
+                            <div class="blog-enhancement__content">
+                                <div class="blog-enhancement__content--title">How Breathing Affects your Workout Results</div>
+                                <div class="blog-enhancement__content--desc">
+                                    <p>
+                                        Learning to breathe correctly while working out can significantly improve your fitness routine. Proper breathing during a body workout supplies your muscles with optimum oxygen, which allows you to strengthen your body more effectively. Here are a few ways as to how breathing can affect your workout results.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               
+            </div>
+            <!-- end item -->
+            <!-- item -->
+            <div class="blog-enhancement__item">
+                <div class="blog-enhancement__img">
+                    <a href='https://www.fitnessfirst.co.th/blog/staying-fit-during-the-holidays' target="_blank">
+        
+                        <img src="public/Picture/fitnessfirst.PNG" alt="feature" class="lazyload" />
+                        <div class="blog-enhancement-desc">
+                            <div class="blog-enhancement__title">
+                                MOVING WELL
+                            </div>
+                            <div class="blog-enhancement__date">11 January 2023</div>
+                            <div class="blog-enhancement__content">
+                                <div class="blog-enhancement__content--title">Staying Fit During The Holidays </div>
+                                <div class="blog-enhancement__content--desc">
+                                    <p>
+                                        As the year comes to an end, we often find that our fitness routes can get warped along the way. It may be tempting to just give in, but you don’t want to start the new year with regret and wishing you had done it all differently. Here are a few suggestions on how you can stay fit this December.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               
+            </div>
+            <!-- end item -->
+            <!-- item -->
+            <div class="blog-enhancement__item">
+                <div class="blog-enhancement__img">
+                    <a href='https://www.fitnessfirst.co.th/blog/workout-hacks' target="_blank">
+        
+                        <img src="public/Picture/moving.jpg" alt="feature" class="lazyload" />
+                        <div class="blog-enhancement-desc">
+                            <div class="blog-enhancement__title">
+                                MOVING WELL
+                            </div>
+                            <div class="blog-enhancement__date">09 January 2023</div>
+                            <div class="blog-enhancement__content">
+                                <div class="blog-enhancement__content--title">Workout hacks</div>
+                                <div class="blog-enhancement__content--desc">
+                                    <p>
+                                        Can you hack that home workout? 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               
+            </div>
+            <!-- end item -->
+                      
+        </div>
+        
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+        <footer class="footer"> 
+            <div class="foot-contenier">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li>Tel. phone: 099-17xx-xxx</li>
+                            <li>E-mail :mahateo@kkumail.com</li>
+                            <li>Line ID: tor2314</li>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"><img class="fb-logo" src="public/Picture/Facebook_Logo_.png" alt=""></i></a>
+                                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"><img class="ig-logo" src="public/Picture/ig-logo.png" alt=""></i></a>
+                                <a href="#"><i class="fab fa-line"><img class="line-logo" src="public/Picture/Line-Logo.png" alt=""></i></a>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="public/main.html">Home Page</a></li>
+                            <li><a href="public/login.html">Login</a></li>
+                            <li ><a href="public/support_page.html" id="support-link-footer">Support</a></li>
+                            <li><a href="public/about_us.html">About-us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Premium</h4>
+                        <ul>
+                            <li><a href="public/ongoing.html">Monthly</a></li>
+                            <li><a href="public/ongoing.html">Yearly</a></li>
+                            <li><a href="public/ongoing.html">Permanent</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
