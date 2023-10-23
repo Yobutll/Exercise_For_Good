@@ -41,9 +41,24 @@ app.get('/adminpage', (req, res, next) => {
     res.sendFile(__dirname + '/admin.html');
 });
 
-app.get('/login', (req, res) => {
-    // Serve the login page here
-    res.sendFile(__dirname + '/login.html');
+app.post('/login', (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    // Use Firebase Authentication to sign in
+    admin.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Successfully signed in
+            const user = userCredential.user;
+            
+            // Store user in session
+            req.session.user = user;
+
+            res.redirect('/adminpage'); // Redirect to the admin page
+        })
+        .catch((error) => {
+            res.send(error.message); // Handle authentication error
+        });
 });
 
 
