@@ -13,6 +13,7 @@
         <input type="text" id="basketball-head-input" placeholder="Head">
         <input type="text" id="basketball-detail-input" placeholder="Detail">
         <input type="text" id="basketball-price-input" placeholder="Price">
+        <input type="text" id="basketball-iframe-input" placeholder="iframe">
         <button id="basketball-add-button">Add Info</button>
     </div>
     <div class="section">
@@ -21,6 +22,7 @@
         <input type="text" id="park-head-input" placeholder="Head">
         <input type="text" id="park-detail-input" placeholder="Detail">
         <input type="text" id="park-price-input" placeholder="Price">
+        <input type="text" id="park-iframe-input" placeholder="iframe">
         <button id="park-add-button">Add Info</button>
     </div>
     <div class="section">
@@ -29,6 +31,7 @@
         <input type="text" id="football-head-input" placeholder="Head">
         <input type="text" id="football-detail-input" placeholder="Detail">
         <input type="text" id="football-price-input" placeholder="Price">
+        <input type="text" id="football-iframe-input" placeholder="iframe">
         <button id="football-add-button">Add Info</button>
     </div>
     <div class="section">
@@ -37,8 +40,10 @@
         <input type="text" id="fitness-head-input" placeholder="Head">
         <input type="text" id="fitness-detail-input" placeholder="Detail">
         <input type="text" id="fitness-price-input" placeholder="Price">
+        <input type="text" id="fitness-iframe-input" placeholder="iframe">
         <button id="fitness-add-button">Add Info</button>
     </div>
+    
 
     <script type="module">
         // Import Firebase libraries and initialize Firebase as in your original code
@@ -76,31 +81,34 @@
                 li.appendChild(deleteButton);
             }
 
-        function setupSection(sectionName, headInputId, detailInputId, priceInputId, addButtonId, infoListId) {
+        function setupSection(sectionName, headInputId, detailInputId, priceInputId, addButtonId, infoListId, iframeInputId) {
             const headInput = document.querySelector(`#${headInputId}`);
             const detailInput = document.querySelector(`#${detailInputId}`);
             const priceInput = document.querySelector(`#${priceInputId}`);
             const addButton = document.querySelector(`#${addButtonId}`);
             const infoList = document.querySelector(`#${infoListId}`);
+            const iframeInput = document.querySelector(`#${iframeInputId}`);
 
             addButton.addEventListener('click', () => {
                 const headValue = headInput.value;
                 const detailValue = detailInput.value;
                 const priceValue = priceInput.value;
-
+                const iframeValue = iframeInput.value;
                 // Check if all fields are provided
                 if (headValue && detailValue && priceValue) {
                     // Add the new info to Firestore
                     addDoc(collection(db, sectionName), {
                         Head: headValue,
                         detail: detailValue,
-                        price: priceValue.split(',').map(Number)
+                        price: priceValue.split(',').map(Number),
+                        iframe: iframeValue
                     }).then(() => {
                         console.log('Info added successfully');
                         // Clear the input fields after adding the info
                         headInput.value = '';
                         detailInput.value = '';
                         priceInput.value = '';
+                        iframeInput.value = '';
                     }).catch((error) => {
                         console.error('Error adding info: ', error);
                     });
@@ -158,10 +166,10 @@
         }
 
         // Setup sections for Basketball, Park, Football, and Fitness
-        setupSection("basketball", "basketball-head-input", "basketball-detail-input", "basketball-price-input", "basketball-add-button", "basketball-info-list");
-        setupSection("park", "park-head-input", "park-detail-input", "park-price-input", "park-add-button", "park-info-list");
-        setupSection("football", "football-head-input", "football-detail-input", "football-price-input", "football-add-button", "football-info-list");
-        setupSection("fitness", "fitness-head-input", "fitness-detail-input", "fitness-price-input", "fitness-add-button", "fitness-info-list");
+        setupSection("basketball", "basketball-head-input", "basketball-detail-input", "basketball-price-input", "basketball-add-button", "basketball-info-list", "basketball-iframe-input");
+        setupSection("park", "park-head-input", "park-detail-input", "park-price-input", "park-add-button", "park-info-list", "park-iframe-input");
+        setupSection("football", "football-head-input", "football-detail-input", "football-price-input", "football-add-button", "football-info-list", "football-iframe-input");
+        setupSection("fitness", "fitness-head-input", "fitness-detail-input", "fitness-price-input", "fitness-add-button", "fitness-info-list", "fitness-iframe-input");
 
     </script>
 </body>
