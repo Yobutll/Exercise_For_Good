@@ -11,48 +11,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
     aboutLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "about_us.html"; 
+        window.location.href = "public/about_us.html"; 
     });
 
     supportLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "support_page.html";
+        window.location.href = "public/support_page.html";
     });
 
 
     ExLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "main.html";
+        window.location.href = "public/main.html";
     });
 
     HomeLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "main.html";
+        window.location.href = "public/main.html";
     });
 
     footballLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "football.html";
+        window.location.href = "public/football.html";
     });
 
     fitnessLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "fitness.html";
+        window.location.href = "public/fitness.html";
     });
 
     parkLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "park.html";
+        window.location.href = "public/park.html";
     });
 
     basLink.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "basketball.html";
+        window.location.href = "public/basketball.html";
     });
 
     supportLinkFooter.addEventListener("click", function(event) {
         event.preventDefault();
-        window.location.href = "support_page.html";
+        window.location.href = "public/support_page.html";
     });
 
 });

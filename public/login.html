@@ -146,7 +146,7 @@ button:hover {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                window.location.href = "/admin.html";
+                window.location.href = "admin.html";
                 update(ref(database, 'users/' + user.uid), {
                     last_login: Date.now()
                 });
