@@ -18,18 +18,12 @@ admin.initializeApp({
   
   // Use express-session for managing user sessions
   app.use(session({
-    secret: 'your-secret-keyAIzaSyCvEX2dnyLlPz--Z4-_C3xQXjQZFjszhM8',
+    secret: 'keyAIzaSyCvEX2dnyLlPz--Z4-_C3xQXjQZFjszhM8',
     resave: false,
     saveUninitialized: true,
   }));
 
-  function isAuthenticated(req, res, next) {
-    if (req.session.user) {
-      next(); // User is authenticated, proceed to /adminpage
-    } else {
-      res.redirect('/login.html'); // Redirect to the login page
-    }
-  }
+  
   
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/main.html');
@@ -39,9 +33,17 @@ app.get('/', (req, res) => {
 
 app.get('/adminpage', (req, res, next) => {
     res.sendFile(__dirname + '/admin.html');
+    function isAuthenticated(req, res, next) {
+    if (req.session.user) {
+      next(); // User is authenticated, proceed to /adminpage
+    } else {
+      res.redirect('/login.html'); // Redirect to the login page
+    }
+  }
 });
 
 app.post('/login', (req, res) => {
+    res.sendFile(__dirname + '/login.html');
     const email = req.body.email;
     const password = req.body.password;
 

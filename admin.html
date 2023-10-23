@@ -65,10 +65,16 @@
             cursor: pointer;
         }
 
+        #logout-button {
+            float: right;
+            color: #fff;
+            background-color: red;
+        }
+
     </style>
 </head>
 <body>
-    <h1>This is our Admin page</h1>
+    <h1>This is our Admin page<button id="logout-button">Log Out</button></h1>
     <div class="section">
         <h2>Basketball</h2>
         <ul id="basketball-info-list"></ul>
@@ -109,6 +115,7 @@
 
     <script type="module">
         // Import Firebase libraries and initialize Firebase as in your original code
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js";
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
         import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js";
         const firebaseConfig = {
@@ -124,10 +131,27 @@
     
     // Initialize Firebase
         const firebaseApp = initializeApp(firebaseConfig);
+        const auth = getAuth(firebaseApp);
+        
         const db = getFirestore(firebaseApp);
         // Add Firebase logic for each section (Basketball, Park, Football, and Fitness)
-
-        function addDeleteButton(li, sectionName, docId, db) {
+        const logoutButton = document.getElementById('logout-button');
+        logoutButton.addEventListener('click', () => {
+            signOut(auth).then(() => {
+                // ออกจากระบบสำเร็จ
+                console.log('Logged out successfully');
+                // ส่งผู้ใช้ออกไปยังหน้า Login หรือหน้าอื่น
+                window.location.href = "/login.html";
+            }).catch((error) => {
+                // เกิดข้อผิดพลาดในการออกจากระบบ
+                console.error('Error logging out: ', error);
+            });
+        });
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+               window.location.href = "/login.html";
+            } else {
+                function addDeleteButton(li, sectionName, docId, db) {
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
                 deleteButton.addEventListener('click', () => {
@@ -216,7 +240,7 @@
                 addDeleteButton(li, sectionName, doc.id, db);
                 infoList.appendChild(li);
             }
-
+                console.log(user) 
 
             // Retrieve and display existing data from Firestore for this section
             const sectionCollection = collection(db, sectionName);
@@ -232,6 +256,10 @@
         setupSection("park", "park-head-input", "park-detail-input", "park-price-input", "park-add-button", "park-info-list", "park-iframe-input");
         setupSection("football", "football-head-input", "football-detail-input", "football-price-input", "football-add-button", "football-info-list", "football-iframe-input");
         setupSection("fitness", "fitness-head-input", "fitness-detail-input", "fitness-price-input", "fitness-add-button", "fitness-info-list", "fitness-iframe-input");
+                
+            }
+        });
+        
 
     </script>
 </body>
