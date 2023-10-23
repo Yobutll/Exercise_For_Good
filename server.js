@@ -6,7 +6,7 @@ const firebase = require('firebase-admin');
 var admin = require("firebase-admin");
 
 
-var serviceAccount = require("path/to/serviceAccountKey.json");
+var serviceAccount = require(__dirname + "/serviceAccountKey.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -18,7 +18,7 @@ admin.initializeApp({
   
   // Use express-session for managing user sessions
   app.use(session({
-    secret: 'your-secret-key',
+    secret: 'your-secret-keyAIzaSyCvEX2dnyLlPz--Z4-_C3xQXjQZFjszhM8',
     resave: false,
     saveUninitialized: true,
   }));
@@ -31,7 +31,9 @@ admin.initializeApp({
     }
   }
   
-    
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/main.html');
+});
 
    
 
@@ -39,7 +41,7 @@ app.get('/adminpage', (req, res, next) => {
     res.sendFile(__dirname + '/admin.html');
 });
 
-app.get('/login.html', (req, res) => {
+app.get('/login', (req, res) => {
     // Serve the login page here
     res.sendFile(__dirname + '/login.html');
 });
