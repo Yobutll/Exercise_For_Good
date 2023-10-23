@@ -23,7 +23,7 @@ admin.initializeApp({
     saveUninitialized: true,
   }));
 
-  
+app.use(express.static(__dirname + '/public'));
   
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/main.html');
