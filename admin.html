@@ -4,15 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            background-color: #ff9900;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .section {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            text-align: left;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff9900;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #logout-button {
+            float: right;
+            color: #fff;
+            background-color: red;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>This is our Admin page</h1>
+    <h1>This is our Admin page<button id="logout-button">Log Out</button></h1>
     <div class="section">
         <h2>Basketball</h2>
         <ul id="basketball-info-list"></ul>
         <input type="text" id="basketball-head-input" placeholder="Head">
         <input type="text" id="basketball-detail-input" placeholder="Detail">
         <input type="text" id="basketball-price-input" placeholder="Price">
+        <input type="text" id="basketball-iframe-input" placeholder="iframe">
         <button id="basketball-add-button">Add Info</button>
     </div>
     <div class="section">
@@ -21,6 +90,7 @@
         <input type="text" id="park-head-input" placeholder="Head">
         <input type="text" id="park-detail-input" placeholder="Detail">
         <input type="text" id="park-price-input" placeholder="Price">
+        <input type="text" id="park-iframe-input" placeholder="iframe">
         <button id="park-add-button">Add Info</button>
     </div>
     <div class="section">
@@ -29,6 +99,7 @@
         <input type="text" id="football-head-input" placeholder="Head">
         <input type="text" id="football-detail-input" placeholder="Detail">
         <input type="text" id="football-price-input" placeholder="Price">
+        <input type="text" id="football-iframe-input" placeholder="iframe">
         <button id="football-add-button">Add Info</button>
     </div>
     <div class="section">
@@ -37,11 +108,14 @@
         <input type="text" id="fitness-head-input" placeholder="Head">
         <input type="text" id="fitness-detail-input" placeholder="Detail">
         <input type="text" id="fitness-price-input" placeholder="Price">
+        <input type="text" id="fitness-iframe-input" placeholder="iframe">
         <button id="fitness-add-button">Add Info</button>
     </div>
+    
 
     <script type="module">
         // Import Firebase libraries and initialize Firebase as in your original code
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js";
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
         import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js";
         const firebaseConfig = {
@@ -57,10 +131,27 @@
     
     // Initialize Firebase
         const firebaseApp = initializeApp(firebaseConfig);
+        const auth = getAuth(firebaseApp);
+        
         const db = getFirestore(firebaseApp);
         // Add Firebase logic for each section (Basketball, Park, Football, and Fitness)
-
-        function addDeleteButton(li, sectionName, docId, db) {
+        const logoutButton = document.getElementById('logout-button');
+        logoutButton.addEventListener('click', () => {
+            signOut(auth).then(() => {
+                // ออกจากระบบสำเร็จ
+                console.log('Logged out successfully');
+                // ส่งผู้ใช้ออกไปยังหน้า Login หรือหน้าอื่น
+                window.location.href = "login.html";
+            }).catch((error) => {
+                // เกิดข้อผิดพลาดในการออกจากระบบ
+                console.error('Error logging out: ', error);
+            });
+        });
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+               window.location.href = "login.html";
+            } else {
+                function addDeleteButton(li, sectionName, docId, db) {
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
                 deleteButton.addEventListener('click', () => {
@@ -76,31 +167,34 @@
                 li.appendChild(deleteButton);
             }
 
-        function setupSection(sectionName, headInputId, detailInputId, priceInputId, addButtonId, infoListId) {
+        function setupSection(sectionName, headInputId, detailInputId, priceInputId, addButtonId, infoListId, iframeInputId) {
             const headInput = document.querySelector(`#${headInputId}`);
             const detailInput = document.querySelector(`#${detailInputId}`);
             const priceInput = document.querySelector(`#${priceInputId}`);
             const addButton = document.querySelector(`#${addButtonId}`);
             const infoList = document.querySelector(`#${infoListId}`);
+            const iframeInput = document.querySelector(`#${iframeInputId}`);
 
             addButton.addEventListener('click', () => {
                 const headValue = headInput.value;
                 const detailValue = detailInput.value;
                 const priceValue = priceInput.value;
-
+                const iframeValue = iframeInput.value;
                 // Check if all fields are provided
                 if (headValue && detailValue && priceValue) {
                     // Add the new info to Firestore
                     addDoc(collection(db, sectionName), {
                         Head: headValue,
                         detail: detailValue,
-                        price: priceValue.split(',').map(Number)
+                        price: priceValue.split(',').map(Number),
+                        iframe: iframeValue
                     }).then(() => {
                         console.log('Info added successfully');
                         // Clear the input fields after adding the info
                         headInput.value = '';
                         detailInput.value = '';
                         priceInput.value = '';
+                        iframeInput.value = '';
                     }).catch((error) => {
                         console.error('Error adding info: ', error);
                     });
@@ -146,7 +240,7 @@
                 addDeleteButton(li, sectionName, doc.id, db);
                 infoList.appendChild(li);
             }
-
+                console.log(user) 
 
             // Retrieve and display existing data from Firestore for this section
             const sectionCollection = collection(db, sectionName);
@@ -158,10 +252,14 @@
         }
 
         // Setup sections for Basketball, Park, Football, and Fitness
-        setupSection("basketball", "basketball-head-input", "basketball-detail-input", "basketball-price-input", "basketball-add-button", "basketball-info-list");
-        setupSection("park", "park-head-input", "park-detail-input", "park-price-input", "park-add-button", "park-info-list");
-        setupSection("football", "football-head-input", "football-detail-input", "football-price-input", "football-add-button", "football-info-list");
-        setupSection("fitness", "fitness-head-input", "fitness-detail-input", "fitness-price-input", "fitness-add-button", "fitness-info-list");
+        setupSection("basketball", "basketball-head-input", "basketball-detail-input", "basketball-price-input", "basketball-add-button", "basketball-info-list", "basketball-iframe-input");
+        setupSection("park", "park-head-input", "park-detail-input", "park-price-input", "park-add-button", "park-info-list", "park-iframe-input");
+        setupSection("football", "football-head-input", "football-detail-input", "football-price-input", "football-add-button", "football-info-list", "football-iframe-input");
+        setupSection("fitness", "fitness-head-input", "fitness-detail-input", "fitness-price-input", "fitness-add-button", "fitness-info-list", "fitness-iframe-input");
+                
+            }
+        });
+        
 
     </script>
 </body>
